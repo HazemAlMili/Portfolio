@@ -1,5 +1,56 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Dark Mode Toggle Functionality
+    const themeSwitch = document.getElementById('theme-switch');
+    
+    if (themeSwitch) {
+        // Check for saved theme preference or use device preference
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const savedTheme = localStorage.getItem('theme');
+        
+        // If the user has explicitly chosen a theme, use it
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') {
+                themeSwitch.checked = true;
+            }
+        } else if (prefersDarkScheme.matches) {
+            // If no saved preference, but device prefers dark mode
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeSwitch.checked = true;
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        // Listen for toggle changes
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+    
+    // Background Animation Setup
+    function setupBackgroundAnimation() {
+        const bgAnimation = document.querySelector('.bg-animation');
+        if (!bgAnimation) return;
+        
+        // Make sure we have the right number of spans
+        const requiredSpans = 7;
+        const existingSpans = bgAnimation.querySelectorAll('span').length;
+        
+        if (existingSpans < requiredSpans) {
+            for (let i = existingSpans; i < requiredSpans; i++) {
+                const span = document.createElement('span');
+                bgAnimation.appendChild(span);
+            }
+        }
+    }
+    
+    setupBackgroundAnimation();
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');

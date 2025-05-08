@@ -8,11 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <h1>My Portfolio</h1>
+                    <a href="index.html">
+                        <img src="images/Arrow-Logo.jpg" alt="Logo">
+                    </a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
@@ -20,6 +31,13 @@
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch" class="theme-switch">
+                    <label for="theme-switch" class="switch-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </label>
+                </div>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -32,7 +50,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight">Your Name</span></h1>
+                <h1>Hello, I'm <span class="highlight">Hazem Al-Melli</span></h1>
                 <h2>Web Developer & Designer</h2>
                 <p>I create beautiful and functional websites with a focus on user experience.</p>
                 <div class="cta-buttons">
@@ -135,14 +153,14 @@
                     <p>Creating amazing web experiences since 2023</p>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://github.com/HazemAlMili" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/hazem-al-melli-a0a0992a5/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61557543208127" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/hazem_almelli/" class="social-icon"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Your Name. All rights reserved.</p>
+                <p>&copy; 2025 Hazem Al-Melli. All rights reserved.</p>
             </div>
         </div>
     </footer>
